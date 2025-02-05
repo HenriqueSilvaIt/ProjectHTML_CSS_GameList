@@ -1,0 +1,228 @@
+/* ELEMENTOS */
+
+:root { /* :root é utilizado pra definir variaveis */
+    --color-dark-grey: #2c3E50;
+    --color-white: #fff;
+    --color-green: #1ABC9C;
+}
+
+* {
+  box-sizing: border-box; /* tanto a borda quanto o padding
+    é contado como a área do elemento, nesse caso a borda não acrescenta externamente */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat"; /* colocando font em todo corpo do documento  font family*/
+}
+
+footer {
+    height: 120px;
+    background-color: var(--color-dark-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* CLASSES e ID */
+
+.nav-container { /*esse é o header*/
+  width: 100%; /* é para garantir que a largura
+    vai ocupar toda a largura da janela do navegador */
+  height: 100px;
+  background-color: var(--color-dark-grey);
+  padding: 20px;
+  position: fixed; /* conjela a tela fica fixa,
+  porém ele vai comer metada da tela
+  ai tem que fazer um artificio para empurrar o conteúdo
+  de baixo, adicionando o padding acima d 100px para dar espaço para 
+  o cabeçalho que tem 100 px de altura*/
+}
+
+.nav-main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto; /* utilizado para 
+    centralizar um div dentro do outro,
+    então o nav nesse caso fica centralizado
+    em relação ao header, é importante
+    especificar uma largura acima para isso funcionar*/
+  display: flex; /* coloca um do lado do outro * */
+  flex-direction: column; /* deixa alinhado em coluna vertical */
+  align-items: center; /* alinha os itens que estão justificado verticalmente, alinha eles na horizontal */
+}
+
+.nav-main a {
+  /* toda tag a dentro da classe nav-main */
+  color: var(--color-white);
+  text-transform: uppercase; /* muda todo o texto para maíusculo*/
+  text-decoration: none; /* remov o subilinhado */
+}
+
+.menu-item {
+  display: flex; /* deixa um elemento do lado do outro */
+  list-style-type: none; /* remove as bolinha de classificação da list */
+  margin: 0; /* laranja no inspecionar é a margin */
+  padding: 0; /* verde no inspecionar é o padding */
+}
+
+.menu-item li {
+  margin: 15px 10px ; /*para dar espaço entre um item de menu e outro, quando
+  colocamos 15px ele pega  o top e seguido da direita baixo e depois esquerda, se coloca só
+  15px e 10px ele considera o 10 para todos os lados*/
+  font-size: 14px;
+}
+
+.nav-brand {
+  font-size: 18px; /* tamanho da fonte */
+  font-weight: bold; /* colocando o formato em negrito
+    pode usar o 700 */
+  margin-bottom: 5px; /* margin bottom é só em baixo */
+}
+
+.profile-containe {
+    background-color: var(--color-green);
+    color: var(--color-white); /* cor da fonte */
+    padding: 160px 0 60px 0; /* colocando espaço no topo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img img {
+    width: 150px;
+    /* como é imagem quadrada se colocar só a largura
+    150 px a altura vai acompanhar 150 */
+   
+
+}
+
+.profile-title {
+    margin: 35px 0 0 0; /* margin ao topo 35 as demais é 0 */
+    font-size: 2rem; /* 1 rem representa  16 pix que é o padrão da fonte
+    do arquivo html, se você mudar o arquivo html de 16pix para 24 pix
+    todos os rem vão mudar relativamente, porque a referencia do rem o r é de root
+    que vem de raiz e a raiz é o arquivo html, quando colocamos 
+    2 rem representa 32pixel, porque cada 1 rem é quandidade de pix html
+    se o padrão do html é 16 pixel 1 rem é 16 pixel, 2 rem é 32pixel e assim por diante*/
+    
+}
+
+.profil-description {
+    margin: 0px;
+    font-size: 1rem; /* rem representa 16px, proque o html por padrão está definido 16px */
+
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto; /* para alinhar o conteúdo ao centro */
+
+}
+
+.portfolio-title {
+    font-size: 2rem; /*deixando a fonte com 32pixel */
+    text-transform: uppercase; /*transforma tudo em maiúculo */
+    text-align: center;
+    color: var(--color-dark-grey);
+    margin: 60px 0 10px 0; /* dando espaço desse texto
+    da sessão acima */
+
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: center; /* alinha ao centro na horizontal */
+    flex-wrap: wrap; /* quebra de linha de acordo com
+    que a imagem caiba no navegador, depois pula linha */
+  
+}
+
+.portfolio-item {
+    width: calc(100% - 40px); /*essa largura + a margem llá embaixo
+    vai fazer o tamanho da imagem ser 320 e vezes 3 da 960 então
+    vai ficar 3 imagens por linha, pois definimos lá em cima 
+    que largura máixma do container é 960px */
+    /*height: 200px; a altura define automatico
+    como colocamos 90% la é emcima e precisa
+    garantir agora margin automática, para isso
+    usaremos a largura com o calc  1oo% da largura da janela
+     - 40 px que é 20 pix cada lado da margem*/
+     max-width: 420px; /* se vocÊ crescer a imagem
+     ela vai chegar até 420px e depois para de crescer
+     para n perder a resolução*/
+    border-radius: 10px; /*arrredondando bordas */
+    cursor: pointer; /* quando passar o mouse em cima da imagem
+    vira icone mão */
+    margin: 20px; /*colocando um espaço entre as imagens */
+
+}
+
+
+.foot-title {
+    color: var(--color-white);;
+    font-size: 14px;
+    margin-top: 30px; /* margin ao topo */
+
+}
+
+.social-container img {
+    width: 32px;
+    height: 32px;
+    margin: 10px;
+}
+
+/* Responsividade */
+
+@media(min-width: 576px) { /* dentro do parenteses vem a condição
+    tudo que tiver dentro das chaves vai valer para a largura 576 em diante */
+
+    /*aumentando a fonte do html a partie do 576px de largura 
+    porém só vai aplicar somente nas fontes que estiverem com
+    media rem que relativa a partir da raiz que é o html*/
+    html {
+        font-size: 20px;
+    }
+
+}
+
+@media(min-width: 768px) {
+    html {
+        font-size: 24px;
+    }
+    .portfolio-item {
+        width: 280px; /* no 992 automaticamente 
+        já vai quebrar em 3 por conta da configuração
+        de largura para quebra de linha que criamos  */
+
+    }
+   
+    .nav-main {
+        flex-direction: row; /* quando chega em 
+        768 o menu vai ficar um do lado do outro */
+        justify-content: space-between; /* deixa um espaço entre os itens */
+
+
+    
+    }
+
+    .nav-container {
+        display: flex;
+    }
+
+    .nav-brand {
+        font-size: 30px;
+        margin-bottom: 0;
+        /* tira a margem quando chega em 768 de largura*/
+
+    }
+    .menu-item li {
+        font-size: 18px;
+    }
+
+    
+}   
